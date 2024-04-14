@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet Submission</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body style="background-image: url('{{ url_for('static', filename='background.png') }}');">
+    <h1>Submit Tweets</h1>
+
+    <form action="/submit" method="post" enctype="multipart/form-data">
+        <label>Choose input method:</label><br><br><br>
+        <input type="radio" name="choice" value="single" checked> Single tweet <br><br><br>
+        <input type="radio" name="choice" value="file"> Upload JSON File <br><br><br><br>
+
+        <!-- Input for single transaction -->
+        <label for="transaction">Tweet Text:</label><br>
+        <input type="text" id="transaction" name="transaction"><br><br>
+
+        <!-- Input for file upload -->
+        <label for="file">Select JSON File:</label><br>
+        <input type="file" id="file" name="file"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
